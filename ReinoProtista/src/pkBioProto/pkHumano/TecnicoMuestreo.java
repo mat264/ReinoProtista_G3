@@ -1,5 +1,5 @@
 package pkBioProto.pkHumano;
 
-public class TecnicoMuestreo {
+public class TecnicoMuestreo extends Persona{
 
 }

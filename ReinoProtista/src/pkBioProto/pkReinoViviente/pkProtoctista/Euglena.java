@@ -1,5 +1,5 @@
 package pkBioProto.pkReinoViviente.pkProtoctista;
 
-public class Euglena {
+public class Euglena extends Flagelados{
 
 }

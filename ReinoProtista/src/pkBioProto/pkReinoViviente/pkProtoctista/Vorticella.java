@@ -1,5 +1,5 @@
 package pkBioProto.pkReinoViviente.pkProtoctista;
 
-public class Vorticella {
+public class Vorticella extends Ciliados {
 
 }

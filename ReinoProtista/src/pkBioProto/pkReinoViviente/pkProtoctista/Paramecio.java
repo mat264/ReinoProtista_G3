@@ -1,5 +1,5 @@
 package pkBioProto.pkReinoViviente.pkProtoctista;
 
-public class Paramecio {
+public class Paramecio extends Ciliados{
 
 }

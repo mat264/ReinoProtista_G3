@@ -1,5 +1,5 @@
 package pkBioProto.pkReinoViviente.pkProtoctista;
 
-public class PlasmodiumVivax {
+public class PlasmodiumVivax extends Esporozoos{
 
 }
