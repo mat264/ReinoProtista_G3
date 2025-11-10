@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "ReinoProtista/src/pkBioProto/pkReinoViviente",
+        "ReinoProtista/src",
+        "ReinoProtista"
+    ]
+}
