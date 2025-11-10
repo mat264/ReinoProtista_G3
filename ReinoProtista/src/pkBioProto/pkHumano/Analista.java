@@ -1,35 +1,36 @@
 package pkBioProto.pkHumano;
 
-public class Analista extends Persona{
-    private String Login;
-    private String password;
+public class Analista extends Persona {
 
-    public Analista(String nombre, String apellido) {
-        super(nombre, apellido);
-    }
+    private String nombreUsuario;
+    private String contraseña;
+
     public Analista(String cedula, String nombre, String apellido) {
         super(cedula, nombre, apellido);
     }
 
-    public boolean setClave(String Login, String password) {
-    if (this.Login != null && this.password != null) {
-        setLogin(Login);
-        setPassword(password);
-        return true;
-    }
-    return false;
-}
-public String getLogin() {
-        return Login;
-    }
-    public void setLogin(String login) {
-        this.Login = login;
-    }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
+    
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    
+
+
+    
+
+    
 }
