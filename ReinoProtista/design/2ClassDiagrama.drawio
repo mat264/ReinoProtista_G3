@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="2Hio7YN6_KBwPfIT1G7m" name="Page-1">
-        <mxGraphModel dx="2563" dy="3224" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1958" dy="2862" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -42,7 +42,7 @@
                 <mxCell id="139" value="+ reaccionarEstimulo (estimulo: String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="5">
                     <mxGeometry y="282.2458374792702" width="213.74718750000002" height="33.35157545605305" as="geometry"/>
                 </mxCell>
-                <mxCell id="135" value="+ alimentar () : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="5">
+                <mxCell id="135" value="+ alimentarse () : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="5">
                     <mxGeometry y="315.5974129353233" width="213.74718750000002" height="46.382835820895515" as="geometry"/>
                 </mxCell>
                 <mxCell id="140" value="+ mostrarDatos () : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="5">
@@ -76,7 +76,7 @@
                 <mxCell id="14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="13" vertex="1">
                     <mxGeometry y="83.08077419354836" width="319.3" height="9.066666666666661" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="+ setClave(login: String, password: String): boolean&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;+ recibirMuestra(muestra :Protoctista, lugar: String): void&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;+ clasificarMuestra (muestra :Protoctista) : String&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;+ evaluarPeligrosidad(muestra :Protoctista, tipoAgua :String): Boolean&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="13">
+                <mxCell id="106" value="+ setClave(login: String, password: String): boolean&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;+ recibirMuestra(muestra :Protozoos, lugar: String): void&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;+ clasificarMuestra (muestra :Protozoos) : String&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;+ evaluarPeligrosidad(muestra :Protozoos, tipoAgua :String): Boolean&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="13">
                     <mxGeometry y="92.14744086021503" width="319.3" height="97.78999999999998" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="&lt;div&gt;&amp;lt;&amp;lt;Abstract&amp;gt;&amp;gt;&lt;/div&gt;Persona" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=46;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="11" vertex="1">
@@ -115,7 +115,7 @@
                 <mxCell id="25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="24" vertex="1">
                     <mxGeometry y="26" width="294.50000000000006" height="21.529999999999994" as="geometry"/>
                 </mxCell>
-                <mxCell id="107" value="+ recolectarMuestra(muestra: Protoctista, lugar :String, tipoAgua: String) : void&lt;div&gt;+ entregarMuestra (analista: Analista) : Boolean&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="24">
+                <mxCell id="107" value="+ recolectarMuestra(muestra: Protozoos, lugar :String, tipoAgua: String) : void&lt;div&gt;+ entregarMuestra (analista: Analista, muestra: Protozoos) : Boolean&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="24">
                     <mxGeometry y="47.529999999999994" width="294.50000000000006" height="65.01378723404251" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="11" source="24" target="21" edge="1">
