@@ -1,51 +1,50 @@
 package pkBioProto.pkHumano;
 
 public abstract class Persona {
-    private String cedula;
+
     private String nombre;
     private String apellido;
+    private String cedula;
 
-    public Persona(String nombre, String apellido) {    
-        setNombre(nombre);
-        setApellido(apellido);
-    }
-    public Persona(String cedula, String nombre, String apellido) {
-        setNombre(nombre);
-        setApellido(apellido);
-        setCedula(cedula);
-    }
-    public boolean validarCedula(String cedula) {
-    
-    if (cedula == null || cedula.length() != 10) {
+    public boolean validarCedula(){
+        if(cedula != null && cedula.length() == 10){
+            return true;
+        }
         return false;
     }
 
-    for (char c : cedula.toCharArray()) {
-        if (!Character.isDigit(c)) {
-            return false;
-        }
+    public Persona() {
     }
 
-    return true;
-}
-
-public String getCedula() {
-        return cedula;
-    }
-    public void setCedula(String cedula) {
+    public Persona(String nombre, String apellido, String cedula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.cedula = cedula;
     }
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public String getApellido() {
         return apellido;
     }
+
     public void setApellido(String apellido) {
-        this.apellido = apellido.toUpperCase();
+        this.apellido = apellido;
     }
 
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+   
 }

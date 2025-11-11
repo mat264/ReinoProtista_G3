@@ -1,42 +1,69 @@
 package pkBioProto;
-
 import java.util.Scanner;
 
-import pkBioProto.pkHumano.Analista;
-import pkBioProto.pkReinoViviente.pkProtoctista.Vorticella;
-
+import pkBioProto.pkHumano.*;
+import pkBioProto.pkReinoViviente.pkProtoctista.*;
 public class AppBioProto {
-   
+    private String nombreUsuario;
+    private String contrasena;
+
+    public AppBioProto() {
+    }
+
+    public AppBioProto(String nombreUsuario, String contrasena) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasena = contrasena;
+    }
 
     public void iniciarReinoProtista(){
-        Scanner ingresoDatos=new Scanner(System.in);
-        Analista analista =new Analista("12345678910", "Grupo3", "Perez");
-        Vorticella vorticella1=new Vorticella("vorti");
+        System.out.println("Iniciando el sistema de Reino Protista con usuario.....");
+    }
 
-        analista.setNombreUsuario("analista");
-        analista.setContraseña("12345");
-
-        //Inicio se sesion
-        System.out.println("\n ------------------BIOENVENIDO AL SISTEMA BIOPROTO------------");
-        boolean acceso=false;
-
-        while (!acceso) {
-            System.out.println("Ingrese su usuario: ");
-            String ingresoUsuario= ingresoDatos.nextLine();
-
-            System.out.println("Ingrese su contraseña: ");
-            String contraseñaUsuario= ingresoDatos.nextLine(); 
-
-            if (validarAcceso(analista, ingresoUsuario, contraseñaUsuario)) {
-                acceso=true;
-                System.out.println("-----------------Ingreso valido, Bienvenido: "+analista.getNombre());
-            }else{
-                System.out.println("-------------Credenciales incorrectas");
-            }
+    public boolean ingreso (Analista usuario){
+        if(usuario != null && usuario.getNombre() != null && usuario.getApellido() != null){
+            System.out.println("Ingreso exitoso. Bienvenido " + usuario.getNombre() + " " + usuario.getApellido());
+            return true;
         }
+        System.out.println("Error en el ingreso. Datos incompletos.");
+        return false;
+    }
 
-        //Requerimiento 03
-        System.out.println("Como vas analista, la vorticella "+ vorticella1.getNombre()+" tiene hambre");
+    public boolean registrar (Protozoos muestra, String tipoAgua, String lugar){
+        if(muestra != null && lugar != null && tipoAgua != null){
+            System.out.println("Muestra registrada: " + muestra.getNombre() + ", Tipo de agua: " + tipoAgua + ", Lugar: " + lugar);
+            return true;
+        }else
+        System.out.println("Error: datos incompletos para registrar la muestra.");
+        return false;
+    }
+
+    public void flujoPrincipal(){
+        Scanner ingresoDatos=new Scanner(System.in);
+        Analista analista = new Analista("Juan", "Perez", "1234567890", "juanp", "12345");
+        TecnicoMuestreo tecnico = new TecnicoMuestreo("Ana", "Gomez", "0987654321", "anag", "mypassword");
+
+        iniciarReinoProtista();
+        ingreso(analista);
+
+        PlasmodiumVivax plasmodium = new PlasmodiumVivax ("sangre");
+        Vorticella vorticella=new Vorticella("vorti");
+
+        tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
+        tecnico.entregarMuestra(analista, plasmodium);
+        registrar(plasmodium, "Agua dulce", "Rio Amazonas");
+
+        tecnico.recolectarMuestra(vorticella, "estanque", "Agua dulce");
+        tecnico.entregarMuestra(analista, vorticella);
+
+        System.out.println("-----------CLASIFICACION--------------");
+        System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
+        System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
+
+        System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
+        analista.evaluarPeligrosidad(plasmodium, "Agua dulce");
+
+        System.out.println("----------ALIMENTAR VORTICELLA--------------");
+        System.out.println("Como vas analista, la vorticella "+ vorticella.getNombre()+" tiene hambre");
         System.out.println("Quieres darle de comer??");
         System.out.println("1. Sí");
         System.out.println("2. No");
@@ -44,17 +71,27 @@ public class AppBioProto {
         int opcion=Integer.parseInt(ingresoDatos.nextLine());
 
         if(opcion==1){
-            vorticella1.comerAbsorver(true);
+            vorticella.comerAbsorver(true);
         }else if(opcion==2){
-            vorticella1.comerAbsorver(false);
+            vorticella.comerAbsorver(false);
         }
         ingresoDatos.close();
+    }
+    
 
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public boolean validarAcceso(Analista analista, String usuario, String contraseña){
-        return analista.getNombreUsuario().equals(usuario) && analista.getContraseña().equals(contraseña);
-}
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
 
-    
-}
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+ }
