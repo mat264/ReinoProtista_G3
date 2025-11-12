@@ -70,13 +70,12 @@ public class AppBioProto {
         tecnico.entregarMuestra(analista, euglena);
         registrar(euglena, "Agua estancada", "Parque");
 
-        System.out.println("-----------CLASIFICACION--------------");
-        System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
-        System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
-        System.out.println("Paramecio "+ analista.clasificarMuestra(paramecio));
-        System.out.println("Vorticella " + analista.clasificarMuestra(vorticella));
-        System.out.println("Ameba " + analista.clasificarMuestra(ameba));
-        System.out.println("Euglena "+ analista.clasificarMuestra(euglena));
+  System.out.println("-----------CLASIFICACION--------------");
+       System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
+       System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
+       System.out.println("Paramecio "+ analista.clasificarMuestra(paramecio));
+       System.out.println("Ameba " + analista.clasificarMuestra(ameba));
+       System.out.println("Euglena "+ analista.clasificarMuestra(euglena));
 
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
