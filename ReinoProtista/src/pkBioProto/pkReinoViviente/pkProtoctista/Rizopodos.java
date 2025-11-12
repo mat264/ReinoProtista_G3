@@ -16,8 +16,6 @@ public abstract class Rizopodos extends Protozoos {
         this.tipoReproduccion = "División binaria";
     }
     
-    // Métodos abstractos que debe implementar Ameba
-    @Override
     public abstract void desplazarse();
     public abstract void capturarAlimento();
     
@@ -26,6 +24,10 @@ public abstract class Rizopodos extends Protozoos {
     }
     
     public void setEstructuraMovimiento(String estructuraMovimiento) {
+        if (estructuraMovimiento == null || estructuraMovimiento.trim().isEmpty()) {
+            System.out.println("Error: La estructura de movimiento no puede estar vacía");
+            return;
+        }
         this.estructuraMovimiento = estructuraMovimiento;
     }
     
@@ -34,6 +36,10 @@ public abstract class Rizopodos extends Protozoos {
     }
     
     public void setTipoReproduccion(String tipoReproduccion) {
+        if (tipoReproduccion == null || tipoReproduccion.trim().isEmpty()) {
+            System.out.println("Error: El tipo de reproducción no puede estar vacío");
+            return;
+        }
         this.tipoReproduccion = tipoReproduccion;
     }
 }

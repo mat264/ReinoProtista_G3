@@ -12,27 +12,27 @@ public class Ameba extends Rizopodos {
     
     public Ameba(String nombre, String tipoMovimientoProtozoos, String habitat, String tipoMovimiento, String habitad) {
         super(nombre, tipoMovimientoProtozoos, habitat);
-        this.tipoMovimiento = tipoMovimiento;
-        this.habitad = habitad;
+        this.tipoMovimiento = (tipoMovimiento != null && !tipoMovimiento.trim().isEmpty()) 
+                              ? tipoMovimiento : "Pseudópodos";
+        this.habitad = (habitad != null && !habitad.trim().isEmpty()) 
+                       ? habitad : "Agua dulce";
     }
     
     public Ameba(String habitad) {
-        super("Ameba Proteus", "Pseudópodos", habitad);
+        super("Ameba Proteus", "Pseudópodos", habitad != null ? habitad : "Agua dulce");
         this.tipoMovimiento = "Pseudópodos";
-        this.habitad = habitad;
+        this.habitad = (habitad != null && !habitad.trim().isEmpty()) 
+                       ? habitad : "Agua dulce";
     }
     
-    // Métodos específicos de Ameba
     public void fagocitar() {
         System.out.println("La ameba está fagocitando alimento mediante pseudópodos");
     }
     
-    @Override
     public void reproducirse() {
         System.out.println("La ameba se está reproduciendo por división binaria");
     }
     
-    // Implementación de métodos abstractos de Rizopodos
     @Override
     public void desplazarse() {
         System.out.println("La ameba se está desplazando mediante " + this.tipoMovimiento);
@@ -44,19 +44,20 @@ public class Ameba extends Rizopodos {
         fagocitar();
     }
     
-    // Implementación de métodos abstractos de Protozoos
     @Override
     public void alimentarse() {
         System.out.println("La ameba se está alimentando por fagocitosis en " + this.habitad);
     }
     
-    @Override
     public String getTipoMovimiento() {
         return tipoMovimiento;
     }
     
-    @Override
     public void setTipoMovimiento(String tipoMovimiento) {
+        if (tipoMovimiento == null || tipoMovimiento.trim().isEmpty()) {
+            System.out.println("Error: El tipo de movimiento no puede estar vacío. Se mantiene el valor actual.");
+            return;
+        }
         this.tipoMovimiento = tipoMovimiento;
     }
     
@@ -65,6 +66,10 @@ public class Ameba extends Rizopodos {
     }
     
     public void setHabitad(String habitad) {
+        if (habitad == null || habitad.trim().isEmpty()) {
+            System.out.println("Error: El hábitat no puede estar vacío. Se mantiene el valor actual.");
+            return;
+        }
         this.habitad = habitad;
     }
 }
