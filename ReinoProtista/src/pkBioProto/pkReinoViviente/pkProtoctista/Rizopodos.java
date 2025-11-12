@@ -16,6 +16,7 @@ public abstract class Rizopodos extends Protozoos {
         this.tipoReproduccion = "División binaria";
     }
     
+    @Override
     public abstract void desplazarse();
     public abstract void capturarAlimento();
     

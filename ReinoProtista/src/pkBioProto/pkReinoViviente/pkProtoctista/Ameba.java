@@ -29,6 +29,7 @@ public class Ameba extends Rizopodos {
         System.out.println("La ameba está fagocitando alimento mediante pseudópodos");
     }
     
+    @Override
     public void reproducirse() {
         System.out.println("La ameba se está reproduciendo por división binaria");
     }
@@ -49,10 +50,12 @@ public class Ameba extends Rizopodos {
         System.out.println("La ameba se está alimentando por fagocitosis en " + this.habitad);
     }
     
+    @Override
     public String getTipoMovimiento() {
         return tipoMovimiento;
     }
     
+    @Override
     public void setTipoMovimiento(String tipoMovimiento) {
         if (tipoMovimiento == null || tipoMovimiento.trim().isEmpty()) {
             System.out.println("Error: El tipo de movimiento no puede estar vacío. Se mantiene el valor actual.");
