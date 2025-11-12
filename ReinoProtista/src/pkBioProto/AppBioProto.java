@@ -45,13 +45,11 @@ public class AppBioProto {
         iniciarReinoProtista();
         ingreso(analista);
 
-        PlasmodiumVivax plasmodium = new PlasmodiumVivax ("sangre");
-        Vorticella vorticella=new Vorticella("vorti");
-        Paramecio paramecio = new Paramecio("Paramecio", 50.0);
-        
-        PlasmodiumVivax plasmodium = new PlasmodiumVivax("sangre");
+       PlasmodiumVivax plasmodium = new PlasmodiumVivax("sangre");
         Vorticella vorticella = new Vorticella("vorti");
+        Paramecio paramecio = new Paramecio("Paramecio", 50.0);
         Ameba ameba = new Ameba("Agua dulce");
+
 
         tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
         tecnico.entregarMuestra(analista, plasmodium);
@@ -92,23 +90,7 @@ public class AppBioProto {
         } else if(opcion == 2){
             vorticella.comerAbsorver(false);
         }
- System.out.println("----------ALIMENTAR PARAMECIO--------------");
-        System.out.println("Analista, el "+ paramecio.getNombre()+" tiene energia baja por hambre");
-        System.out.println("Quieres darle de comer??");
-        System.out.println("1. Sí");
-        System.out.println("2. No");
-        System.out.print("Elige una opción: ");
-        int opcion2=Integer.parseInt(ingresoDatos.nextLine());
-        if(opcion2==1){
-            paramecio.alimentarse();
-            System.out.println("\n----------PARAMECIO --------------");
-        paramecio.mostrarEstado();
-        paramecio.moverCilios();
-        paramecio.alimentarse();
-        paramecio.mostrarEstado();
-        paramecio.reproducirse();
-
-        System.out.println("\n----------ESTUDIO DE LA AMEBA--------------");
+ System.out.println("\n----------ESTUDIO DE LA AMEBA--------------");
         System.out.println("Analista " + analista.getNombre() + ", tenemos una ameba recién capturada: " + ameba.getNombre());
         System.out.println("Hábitat de origen: " + ameba.getHabitad());
         System.out.println("Tipo de movimiento: " + ameba.getTipoMovimiento());
@@ -122,7 +104,7 @@ public class AppBioProto {
 
         System.out.println("\n--- INICIANDO EXPERIMENTO ---");
         if(opcionAmeba == 1){
-            System.out.println("Experimento: Observación de locomoción");
+            System.out.println(" Experimento: Observación de locomoción");
             System.out.println("Colocando la ameba en el portaobjetos...");
             System.out.println("Aplicando gota de agua...");
             System.out.println("Enfocando microscopio a 100x...\n");
@@ -160,12 +142,7 @@ public class AppBioProto {
         System.out.println("\n--- FINALIZANDO SESIÓN DE LABORATORIO ---");
         System.out.println("Gracias por usar BioProto, " + analista.getNombre() + "!");
         
-
         ingresoDatos.close();
-        }else if(opcion2==2){
-            System.out.println("Has decidido no alimentar al paramecio.");
-        }
-        
     }
     
     public String getNombreUsuario() {
@@ -183,3 +160,4 @@ public class AppBioProto {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
+}
