@@ -47,17 +47,23 @@ public class AppBioProto {
 
         PlasmodiumVivax plasmodium = new PlasmodiumVivax ("sangre");
         Vorticella vorticella=new Vorticella("vorti");
-
+        Paramecio paramecio = new Paramecio("Paramecio", 50.0);
+        
         tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
         tecnico.entregarMuestra(analista, plasmodium);
         registrar(plasmodium, "Agua dulce", "Rio Amazonas");
 
         tecnico.recolectarMuestra(vorticella, "estanque", "Agua dulce");
         tecnico.entregarMuestra(analista, vorticella);
+        
+        tecnico.recolectarMuestra(paramecio, "Laguna", "Agua dulce");
+        tecnico.entregarMuestra(analista, paramecio);
+        registrar(paramecio, "Agua dulce", "Laguna");
 
         System.out.println("-----------CLASIFICACION--------------");
         System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
         System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
+        System.out.println("Paramecio "+ analista.clasificarMuestra(paramecio));
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
         analista.evaluarPeligrosidad(plasmodium, "Agua dulce");
@@ -75,7 +81,27 @@ public class AppBioProto {
         }else if(opcion==2){
             vorticella.comerAbsorver(false);
         }
+ System.out.println("----------ALIMENTAR PARAMECIO--------------");
+        System.out.println("Analista, el "+ paramecio.getNombre()+" tiene energia baja por hambre");
+        System.out.println("Quieres darle de comer??");
+        System.out.println("1. Sí");
+        System.out.println("2. No");
+        System.out.print("Elige una opción: ");
+        int opcion2=Integer.parseInt(ingresoDatos.nextLine());
+        if(opcion2==1){
+            paramecio.alimentarse();
+            System.out.println("\n----------PARAMECIO --------------");
+        paramecio.mostrarEstado();
+        paramecio.moverCilios();
+        paramecio.alimentarse();
+        paramecio.mostrarEstado();
+        paramecio.reproducirse();
+
         ingresoDatos.close();
+        }else if(opcion2==2){
+            System.out.println("Has decidido no alimentar al paramecio.");
+        }
+        
     }
     
 
@@ -94,4 +120,7 @@ public class AppBioProto {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
+
+
+
  }

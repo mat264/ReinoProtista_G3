@@ -1,16 +1,42 @@
 package pkBioProto.pkReinoViviente.pkProtoctista;
 public abstract class Ciliados extends Protozoos{
-    private  Boolean tieneCilio;
-
-    public  Ciliados(String nombre){
+    // Atributo privado
+    private boolean tieneCilio;
+    
+    // Constructor sin parámetros
+    public Ciliados() {
         super();
-        setNombre(nombre);
-        setTipoMovimiento("Cilios");
-        setHabitat("Agua dulce");
-        this.tieneCilio = true; 
+        this.tieneCilio = true;
     }
-
+    
+    // Constructor con parámetros
+    public Ciliados(String nombre) {
+        super(nombre, "Movimiento por cilios", "Agua");
+        this.tieneCilio = true;
+    }
+    
+    // Constructor con más parámetros
+    public Ciliados(String nombre, String tipoMovimiento, String habitat) {
+        super(nombre, tipoMovimiento, habitat);
+        this.tieneCilio = true;
+    }
+    
+    // Método público
     public void moverCilios() {
-    System.out.println(getNombre() + " se está moviendo usando sus cilios.");
-}    
+        if (tieneCilio) {
+            System.out.println("Los cilios se están moviendo de forma coordinada");
+        } else {
+            System.out.println("No tiene cilios para moverse");
+        }
+    }
+    
+    // Getter y Setter
+    public boolean isTieneCilio() {
+        return tieneCilio;
+    }
+    
+    public void setTieneCilio(boolean tieneCilio) {
+        this.tieneCilio = tieneCilio;
+    }
 }
+
