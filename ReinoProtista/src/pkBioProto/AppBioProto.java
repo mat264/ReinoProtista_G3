@@ -49,7 +49,7 @@ public class AppBioProto {
         Vorticella vorticella = new Vorticella("vorti");
         Paramecio paramecio = new Paramecio("Paramecio", 50.0);
         Ameba ameba = new Ameba("Agua dulce");
-
+        Euglena euglena = new Euglena("Euglena Verde", "Charco", true);
 
         tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
         tecnico.entregarMuestra(analista, plasmodium);
@@ -66,12 +66,17 @@ public class AppBioProto {
         tecnico.entregarMuestra(analista, ameba);
         registrar(ameba, "Agua dulce", "Laguna");
 
+        tecnico.recolectarMuestra(euglena, "Parque", "Agua estancada");
+        tecnico.entregarMuestra(analista, euglena);
+        registrar(euglena, "Agua estancada", "Parque");
+
         System.out.println("-----------CLASIFICACION--------------");
         System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
         System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
         System.out.println("Paramecio "+ analista.clasificarMuestra(paramecio));
         System.out.println("Vorticella " + analista.clasificarMuestra(vorticella));
         System.out.println("Ameba " + analista.clasificarMuestra(ameba));
+        System.out.println("Euglena "+ analista.clasificarMuestra(euglena));
 
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
@@ -141,6 +146,26 @@ public class AppBioProto {
 
         System.out.println("\n--- FINALIZANDO SESIÓN DE LABORATORIO ---");
         System.out.println("Gracias por usar BioProto, " + analista.getNombre() + "!");
+
+System.out.println("\n---------- PROBAR EUGLENA --------------");
+        System.out.println("Analista, ahora vamos a probar la " + euglena.getNombre());
+        System.out.println("¿Quieres aplicar luz a la muestra?");
+        System.out.println("1. Sí, aplicar luz");
+        System.out.println("2. No, dejar en oscuridad");
+        System.out.print("Elige una opción: ");
+        int opcionLuz = Integer.parseInt(ingresoDatos.nextLine());
+
+        if(opcionLuz == 1){
+            euglena.setHayLuz(true);
+        } else {
+            euglena.setHayLuz(false);
+        }
+        
+        System.out.println("\n... Probando reacción al estímulo 'luz'...");
+        euglena.reaccionarEstimulo("luz"); 
+        
+        System.out.println("... Probando alimentación ...");
+        euglena.alimentarse(); 
         
         ingresoDatos.close();
     }
