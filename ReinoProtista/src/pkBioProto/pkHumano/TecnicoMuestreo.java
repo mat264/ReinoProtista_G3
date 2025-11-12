@@ -2,11 +2,13 @@ package pkBioProto.pkHumano;
 
 import pkBioProto.pkReinoViviente.pkProtoctista.Protozoos;
 public class TecnicoMuestreo extends Persona{
+
     public TecnicoMuestreo() {
         super();
     }
     public TecnicoMuestreo(String nombre, String apellido, String cedula, String nombreUsuario, String contrasena) {
         super(nombre, apellido, cedula);
+
     }
 
     public void recolectarMuestra(Protozoos muestra, String lugar, String tipoAgua){
