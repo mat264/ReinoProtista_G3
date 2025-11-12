@@ -47,6 +47,7 @@ public class AppBioProto {
 
         PlasmodiumVivax plasmodium = new PlasmodiumVivax ("sangre");
         Vorticella vorticella=new Vorticella("vorti");
+        Euglena euglena = new Euglena("Euglena Verde", "Charco", true);
 
         tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
         tecnico.entregarMuestra(analista, plasmodium);
@@ -55,9 +56,15 @@ public class AppBioProto {
         tecnico.recolectarMuestra(vorticella, "estanque", "Agua dulce");
         tecnico.entregarMuestra(analista, vorticella);
 
+        tecnico.recolectarMuestra(euglena, "Parque", "Agua estancada");
+        tecnico.entregarMuestra(analista, euglena);
+        registrar(euglena, "Agua estancada", "Parque");
+
         System.out.println("-----------CLASIFICACION--------------");
         System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
         System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
+        System.out.println("Euglena "+ analista.clasificarMuestra(euglena));
+
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
         analista.evaluarPeligrosidad(plasmodium, "Agua dulce");
@@ -75,6 +82,27 @@ public class AppBioProto {
         }else if(opcion==2){
             vorticella.comerAbsorver(false);
         }
+
+System.out.println("\n---------- PROBAR EUGLENA --------------");
+        System.out.println("Analista, ahora vamos a probar la " + euglena.getNombre());
+        System.out.println("¿Quieres aplicar luz a la muestra?");
+        System.out.println("1. Sí, aplicar luz");
+        System.out.println("2. No, dejar en oscuridad");
+        System.out.print("Elige una opción: ");
+        int opcionLuz = Integer.parseInt(ingresoDatos.nextLine());
+
+        if(opcionLuz == 1){
+            euglena.setHayLuz(true);
+        } else {
+            euglena.setHayLuz(false);
+        }
+        
+        System.out.println("\n... Probando reacción al estímulo 'luz'...");
+        euglena.reaccionarEstimulo("luz"); 
+        
+        System.out.println("... Probando alimentación ...");
+        euglena.alimentarse(); 
+        
         ingresoDatos.close();
     }
     
