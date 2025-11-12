@@ -10,7 +10,7 @@ public class PlasmodiumVivax extends Esporozoos{
         this.nombreCientifico = ("Plasmodium Vivax");
         this.enfermedad = "Malaria";
         this.hospedador = "Humano";
-    }
+    } 
 
     public PlasmodiumVivax(String nombre, String tipoMovimiento, String habitat, String enfermedad, String nombreCientifico, String hospedador) {
         super(nombre, tipoMovimiento, habitat);

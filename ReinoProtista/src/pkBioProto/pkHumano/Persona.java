@@ -1,6 +1,7 @@
 package pkBioProto.pkHumano;
 
 public abstract class Persona {
+
     private String nombre;
     private String apellido;
     private String cedula;

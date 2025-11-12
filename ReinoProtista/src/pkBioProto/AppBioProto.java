@@ -1,4 +1,6 @@
 package pkBioProto;
+import java.util.Scanner;
+
 import pkBioProto.pkHumano.*;
 import pkBioProto.pkReinoViviente.pkProtoctista.*;
 public class AppBioProto {
@@ -36,24 +38,46 @@ public class AppBioProto {
     }
 
     public void flujoPrincipal(){
-        Analista analista = new Analista("Juan", "Perez", "1234567890", "juanp", "securepass");
+        Scanner ingresoDatos=new Scanner(System.in);
+        Analista analista = new Analista("Juan", "Perez", "1234567890", "juanp", "12345");
         TecnicoMuestreo tecnico = new TecnicoMuestreo("Ana", "Gomez", "0987654321", "anag", "mypassword");
 
         iniciarReinoProtista();
         ingreso(analista);
 
         PlasmodiumVivax plasmodium = new PlasmodiumVivax ("sangre");
+        Vorticella vorticella=new Vorticella("vorti");
 
         tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
         tecnico.entregarMuestra(analista, plasmodium);
         registrar(plasmodium, "Agua dulce", "Rio Amazonas");
 
+        tecnico.recolectarMuestra(vorticella, "estanque", "Agua dulce");
+        tecnico.entregarMuestra(analista, vorticella);
+
         System.out.println("-----------CLASIFICACION--------------");
         System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
+        System.out.println("Vorticella "+ analista.clasificarMuestra(vorticella));
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
         analista.evaluarPeligrosidad(plasmodium, "Agua dulce");
+
+        System.out.println("----------ALIMENTAR VORTICELLA--------------");
+        System.out.println("Como vas analista, la vorticella "+ vorticella.getNombre()+" tiene hambre");
+        System.out.println("Quieres darle de comer??");
+        System.out.println("1. Sí");
+        System.out.println("2. No");
+        System.out.print("Elige una opción: ");
+        int opcion=Integer.parseInt(ingresoDatos.nextLine());
+
+        if(opcion==1){
+            vorticella.comerAbsorver(true);
+        }else if(opcion==2){
+            vorticella.comerAbsorver(false);
+        }
+        ingresoDatos.close();
     }
+    
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -70,5 +94,4 @@ public class AppBioProto {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-
-}
+ }

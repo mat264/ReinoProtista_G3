@@ -1,6 +1,9 @@
 package pkBioProto.pkHumano;
-
+import pkBioProto.pkReinoViviente.pkProtoctista.Ciliados;
+import pkBioProto.pkReinoViviente.pkProtoctista.Esporozoos;
+import pkBioProto.pkReinoViviente.pkProtoctista.Flagelados;
 import pkBioProto.pkReinoViviente.pkProtoctista.Protozoos;
+import pkBioProto.pkReinoViviente.pkProtoctista.Rizopodos;
 
 public class Analista extends Persona{
     private String nombreUsuario;
@@ -43,18 +46,17 @@ public class Analista extends Persona{
         }
 
         String tipo = "Otro tipo";
-        if(muestra != null){
-            String nombre = muestra.getNombre().toLowerCase();
-            if(nombre.contains("amoeba")){
-                tipo = "Ameba";
-            }else if(nombre.contains ("paramecio")){
-                tipo = "Ciliado";
-            }else if(nombre.contains ("ameba")){
-                tipo = "Rizopodo";
-            }else if(nombre.contains ("plasmodium")){
-                tipo = "Esporozoo";
-            }
-        }
+        if(muestra instanceof Ciliados){
+            tipo = "Ciliado";
+        } else if(muestra instanceof Esporozoos){
+            tipo = "Esporozoos";
+        } else if(muestra instanceof Flagelados){
+            tipo = "Flagelado";
+        } else if(muestra instanceof Rizopodos){
+            tipo = "Rizopodo";
+        } else {
+            tipo = "Otro tipo";
+    }
         System.out.println("La muestra " + muestra.getNombre() + " ha sido clasificada como: " + tipo);
         return tipo;
     }
@@ -79,6 +81,7 @@ public class Analista extends Persona{
     }
 
 
+
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -94,4 +97,5 @@ public class Analista extends Persona{
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
+
 }

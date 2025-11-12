@@ -2,6 +2,7 @@ package pkBioProto.pkReinoViviente;
 public abstract class SerVivo {
     private boolean estaVivo;
     private String nombre;
+
     private String tipoMovimiento;
     private String habitat;
 
@@ -34,6 +35,7 @@ public abstract class SerVivo {
         System.out.println("Habitat: " + this.habitat);
     }
 
+
     public boolean isEstaVivo() {
         return estaVivo;
     }
@@ -41,6 +43,7 @@ public abstract class SerVivo {
     public void setEstaVivo(boolean estaVivo) {
         this.estaVivo = estaVivo;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -67,3 +70,4 @@ public abstract class SerVivo {
     }
     
 }
+
