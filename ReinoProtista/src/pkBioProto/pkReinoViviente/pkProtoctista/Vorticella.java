@@ -11,6 +11,12 @@ public class Vorticella extends Ciliados {
         this.metodoAlimentacion="filtracion";
     }
 
+    public Vorticella(String nombre){
+        super(nombre);
+        this.forma="campana invertida";
+        this.metodoAlimentacion="Filtracion";
+    }
+
     public void capturarAlimento() {
         System.out.println(getNombre() + " está capturando alimento con sus cilios.");
     }
@@ -42,10 +48,6 @@ public class Vorticella extends Ciliados {
         this.metodoAlimentacion = metodoAlimentacion;
     }
 
-    public Vorticella(String nombre){
-        super(nombre);
-        this.forma="campana invertida";
-        this.metodoAlimentacion="Filtracion";
-    }
+    
 }
 
