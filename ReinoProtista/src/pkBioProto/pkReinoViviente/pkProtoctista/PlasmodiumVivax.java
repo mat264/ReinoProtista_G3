@@ -6,11 +6,18 @@ public class PlasmodiumVivax extends Esporozoos{
     private String hospedador;
 
     public PlasmodiumVivax() {
-        super();
-        this.nombreCientifico = ("Plasmodium Vivax");
+        super("Plasmodium Vivax", "Sporozoito", "Dentro del cuerpo humano");
+        this.nombreCientifico = "Plasmodium Vivax";
         this.enfermedad = "Malaria";
         this.hospedador = "Humano";
-    } 
+    }
+
+    public PlasmodiumVivax(String habitat) {
+        super("Plasmodium Vivax", "Sporozoito", habitat);
+        this.nombreCientifico = "Plasmodium Vivax";
+        this.enfermedad = "Malaria";
+        this.hospedador = "Humano"; 
+    }
 
     public PlasmodiumVivax(String nombre, String tipoMovimiento, String habitat, String enfermedad, String nombreCientifico, String hospedador) {
         super(nombre, tipoMovimiento, habitat);
@@ -19,12 +26,6 @@ public class PlasmodiumVivax extends Esporozoos{
         this.hospedador = hospedador;
     }
 
-    public PlasmodiumVivax(String habitat) {
-        super("Plasmodium Vivax", "Sporozoos", "Dentro del cuerpo humano");
-        this.nombreCientifico = ("Plasmodium Vivax");
-        this.enfermedad = "Malaria";
-        this.hospedador = "Humano";
-    }
 
     public void infectarHumano(){
         System.out.println("El Plasmodium Vivax esta infectando a un humano");

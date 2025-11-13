@@ -17,7 +17,7 @@ public abstract class Esporozoos extends Protozoos{
 
     public Esporozoos(String nombre, String tipoMovimiento, String habitat) {
         super(nombre, tipoMovimiento, habitat);
-        this.esParasitico = esParasitico;
+        this.esParasitico = true;
     }
 
     public boolean isEsParasitico() {

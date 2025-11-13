@@ -40,35 +40,59 @@ public class AppBioProto {
     public void flujoPrincipal(){
         Scanner ingresoDatos = new Scanner(System.in);
         Analista analista = new Analista("Juan", "Perez", "1234567890", "juanp", "12345");
-        TecnicoMuestreo tecnico = new TecnicoMuestreo("Ana", "Gomez", "0987654321", "anag", "mypassword");
+        TecnicoMuestreo tecnico = new TecnicoMuestreo("Ana", "Gomez", "0987654321");
 
         iniciarReinoProtista();
         ingreso(analista);
 
-       PlasmodiumVivax plasmodium = new PlasmodiumVivax("sangre");
+        PlasmodiumVivax plasmodium = new PlasmodiumVivax("sangre");
         Vorticella vorticella = new Vorticella("vorti");
         Paramecio paramecio = new Paramecio("Paramecio", 50.0);
         Ameba ameba = new Ameba("Agua dulce");
         Euglena euglena = new Euglena("Euglena Verde", "Charco", true);
 
-        tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
-        tecnico.entregarMuestra(analista, plasmodium);
-        registrar(plasmodium, "Agua dulce", "Rio Amazonas");
+        System.out.println("\n==============================================");
+        System.out.println("      REGISTRO DE MUESTREO - BIOPROTO LAB      ");
+        System.out.println("==============================================\n");
 
-        tecnico.recolectarMuestra(vorticella, "estanque", "Agua dulce");
+        System.out.println(">> Procesando muestra #1 (Plasmodium Vivax)");
+        tecnico.recolectarMuestra(plasmodium, "Río Amazonas", "Agua dulce");
+        tecnico.entregarMuestra(analista, plasmodium);
+        registrar(plasmodium, "Agua dulce", "Río Amazonas");
+
+        System.out.println("\n----------------------------------------------\n");
+
+        System.out.println(">> Procesando muestra #2 (Vorticella)");
+        tecnico.recolectarMuestra(vorticella, "Estanque", "Agua dulce");
         tecnico.entregarMuestra(analista, vorticella);
-        
+
+        registrar(vorticella, "Agua dulce", "Estanque");
+
+        System.out.println("\n----------------------------------------------\n");
+
+        System.out.println(">> Procesando muestra #3 (Paramecio)");
         tecnico.recolectarMuestra(paramecio, "Laguna", "Agua dulce");
         tecnico.entregarMuestra(analista, paramecio);
         registrar(paramecio, "Agua dulce", "Laguna");
 
+        System.out.println("\n----------------------------------------------\n");
+
+        System.out.println(">> Procesando muestra #4 (Ameba)");
         tecnico.recolectarMuestra(ameba, "Laguna", "Agua dulce");
         tecnico.entregarMuestra(analista, ameba);
         registrar(ameba, "Agua dulce", "Laguna");
 
+        System.out.println("\n----------------------------------------------\n");
+
+        System.out.println(">> Procesando muestra #5 (Euglena)");
         tecnico.recolectarMuestra(euglena, "Parque", "Agua estancada");
         tecnico.entregarMuestra(analista, euglena);
         registrar(euglena, "Agua estancada", "Parque");
+
+        System.out.println("\n==============================================");
+        System.out.println("MUESTREO COMPLETADO CON ÉXITO");
+        System.out.println("==============================================\n");
+
 
   System.out.println("-----------CLASIFICACION--------------");
        System.out.println("Plasmodium " + analista.clasificarMuestra(plasmodium));
@@ -80,6 +104,12 @@ public class AppBioProto {
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
         analista.evaluarPeligrosidad(plasmodium, "Agua dulce", "Rio Amazonas");
+
+        System.out.println("---------- ESTUDIO DEL PLASMODIUM --------------");
+        plasmodium.infectarHumano();
+        plasmodium.reproducirseEnMosquito();
+        plasmodium.desplazarse();
+        plasmodium.alimentarse();
 
         System.out.println("----------ALIMENTAR VORTICELLA--------------");
         System.out.println("Como vas analista, la vorticella " + vorticella.getNombre() + " tiene hambre");

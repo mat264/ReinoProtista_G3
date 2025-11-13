@@ -6,7 +6,7 @@ public class TecnicoMuestreo extends Persona{
     public TecnicoMuestreo() {
         super();
     }
-    public TecnicoMuestreo(String nombre, String apellido, String cedula, String nombreUsuario, String contrasena) {
+    public TecnicoMuestreo(String nombre, String apellido, String cedula) {
         super(nombre, apellido, cedula);
 
     }
