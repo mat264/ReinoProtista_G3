@@ -79,7 +79,7 @@ public class AppBioProto {
 
 
         System.out.println("--------------EVALUACION DE PELIGROSIDAD--------------");
-        analista.evaluarPeligrosidad(plasmodium, "Agua dulce");
+        analista.evaluarPeligrosidad(plasmodium, "Agua dulce", "Rio Amazonas");
 
         System.out.println("----------ALIMENTAR VORTICELLA--------------");
         System.out.println("Como vas analista, la vorticella " + vorticella.getNombre() + " tiene hambre");
