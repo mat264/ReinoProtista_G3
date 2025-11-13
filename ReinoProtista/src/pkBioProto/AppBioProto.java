@@ -54,18 +54,22 @@ public class AppBioProto {
         tecnico.recolectarMuestra(plasmodium, "Rio Amazonas", "Agua dulce");
         tecnico.entregarMuestra(analista, plasmodium);
         registrar(plasmodium, "Agua dulce", "Rio Amazonas");
+        System.out.println("-----------------------------");
 
         tecnico.recolectarMuestra(vorticella, "estanque", "Agua dulce");
         tecnico.entregarMuestra(analista, vorticella);
         
+        System.out.println("-----------------------------");
         tecnico.recolectarMuestra(paramecio, "Laguna", "Agua dulce");
         tecnico.entregarMuestra(analista, paramecio);
         registrar(paramecio, "Agua dulce", "Laguna");
 
+        System.out.println("-----------------------------");
         tecnico.recolectarMuestra(ameba, "Laguna", "Agua dulce");
         tecnico.entregarMuestra(analista, ameba);
         registrar(ameba, "Agua dulce", "Laguna");
 
+        System.out.println("-----------------------------");
         tecnico.recolectarMuestra(euglena, "Parque", "Agua estancada");
         tecnico.entregarMuestra(analista, euglena);
         registrar(euglena, "Agua estancada", "Parque");
@@ -86,14 +90,31 @@ public class AppBioProto {
         System.out.println("Quieres darle de comer??");
         System.out.println("1. Sí");
         System.out.println("2. No");
-        System.out.print("Elige una opción: ");
-        int opcion = Integer.parseInt(ingresoDatos.nextLine());
 
-        if(opcion == 1){
-            vorticella.comerAbsorver(true);
-        } else if(opcion == 2){
-            vorticella.comerAbsorver(false);
+        int opcion=0;
+        boolean valido=false;
+        do {
+            try {
+            System.out.print("Elige una opción: ");
+            opcion = Integer.parseInt(ingresoDatos.nextLine());
+            if (opcion == 1 || opcion == 2) {
+            valido = true;
+        } else {
+            System.out.println("Opción invalida");
         }
+
+         } catch (NumberFormatException e) {
+            System.out.println("ingresa un número ");
+        }
+     } while (valido==false);
+
+        if (opcion == 1) {
+            vorticella.comerAbsorver(true);
+        } else {
+        vorticella.comerAbsorver(false);
+        }
+    
+     
  System.out.println("\n----------ESTUDIO DE LA AMEBA--------------");
         System.out.println("Analista " + analista.getNombre() + ", tenemos una ameba recién capturada: " + ameba.getNombre());
         System.out.println("Hábitat de origen: " + ameba.getHabitad());
@@ -167,6 +188,7 @@ System.out.println("\n---------- PROBAR EUGLENA --------------");
         euglena.alimentarse(); 
         
         ingresoDatos.close();
+
     }
     
     public String getNombreUsuario() {
