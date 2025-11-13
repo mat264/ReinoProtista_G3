@@ -67,15 +67,29 @@ public class AppBioProto {
         System.out.println("Quieres darle de comer??");
         System.out.println("1. Sí");
         System.out.println("2. No");
-        System.out.print("Elige una opción: ");
-        int opcion=Integer.parseInt(ingresoDatos.nextLine());
-
-        if(opcion==1){
-            vorticella.comerAbsorver(true);
-        }else if(opcion==2){
-            vorticella.comerAbsorver(false);
+        int opcion=0;
+        boolean valido=false;
+        do {
+            try {
+            System.out.print("Elige una opción: ");
+            opcion = Integer.parseInt(ingresoDatos.nextLine());
+            if (opcion == 1 || opcion == 2) {
+            valido = true;
+        } else {
+            System.out.println("Opción invalida");
         }
-        ingresoDatos.close();
+
+         } catch (NumberFormatException e) {
+            System.out.println("ingresa un número ");
+        }
+     } while (valido==false);
+
+        if (opcion == 1) {
+            vorticella.comerAbsorver(true);
+        } else {
+        vorticella.comerAbsorver(false);
+        }
+       ingresoDatos.close();
     }
     
 
