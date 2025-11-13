@@ -61,7 +61,7 @@ public class Analista extends Persona{
         return tipo;
     }
 
-    public boolean evaluarPeligrosidad(Protozoos muestra, String tipoAgua) {
+    public boolean evaluarPeligrosidad(Protozoos muestra, String tipoAgua, String lugar) {
         if (muestra == null) {
             System.out.println("Error: la muestra no puede ser nula.");
             return false;
