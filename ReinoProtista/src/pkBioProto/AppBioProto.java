@@ -81,6 +81,8 @@ public class AppBioProto {
         tecnico.entregarMuestra(analista, paramecio);
         registrar(paramecio, "Agua dulce", "Laguna");
 
+       
+
         System.out.println("\n----------------------------------------------\n");
 
         System.out.println(">> Procesando muestra #4 (Ameba)");
@@ -222,9 +224,62 @@ System.out.println("\n---------- PROBAR EUGLENA --------------");
         System.out.println("... Probando alimentación ...");
         euglena.alimentarse(); 
         
+         System.out.println("\n========== ALIMENTAR PARAMECIO ==========");
+        paramecio.mostrarEstado();
+        System.out.println("\n¿Deseas alimentar al " + paramecio.getNombre() + "?");
+        System.out.println("1. Sí");
+        System.out.println("2. No");
+
+        int opcionParametcio = 0;
+        boolean validoParametcio = false;
+        do {
+            try {
+                System.out.print("Elige una opción: ");
+                opcionParametcio = Integer.parseInt(ingresoDatos.nextLine());
+                if (opcionParametcio == 1 || opcionParametcio == 2) {
+                    validoParametcio = true;
+                } else {
+                    System.out.println("Opción inválida");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Ingresa un número válido");
+            }
+        } while (!validoParametcio);
+
+        if (opcionParametcio == 1) {
+            paramecio.alimentarse();
+            
+            System.out.println("\n¿Deseas que el " + paramecio.getNombre() + " se reproduzca?");
+            System.out.println("1. Sí");
+            System.out.println("2. No");
+
+            int opcionReproduccion = 0;
+            boolean validoReproduccion = false;
+            do {
+                try {
+                    System.out.print("Elige una opción: ");
+                    opcionReproduccion = Integer.parseInt(ingresoDatos.nextLine());
+                    if (opcionReproduccion == 1 || opcionReproduccion == 2) {
+                        validoReproduccion = true;
+                    } else {
+                        System.out.println("Opción inválida");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Ingresa un número válido");
+                }
+            } while (!validoReproduccion);
+
+            if (opcionReproduccion == 1) {
+                paramecio.reproducirse();
+            }
+        } else {
+            System.out.println("El " + paramecio.getNombre() + " NO fue alimentado.");
+        }
+
         ingresoDatos.close();
 
     }
+    
     
     public String getNombreUsuario() {
         return nombreUsuario;
